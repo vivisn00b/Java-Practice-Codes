@@ -7,5 +7,13 @@ public class overriding extends methodoverriding {
     void bark() {
         System.out.println("Dog is barking");
     }
+    public static void main(String[] args) {
+        methodoverriding dog = new methodoverriding();
+        dog.move();
+        overriding obj = new overriding();
+        obj.move();
+        obj.bark();
+        obj.eat();
+    }
 }
 
