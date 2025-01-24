@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class varargs {
     public static void main(String[] args) {
-        multiple(2, 3, "Viv", "Rahul", "git");
+//        multiple(2, 3, "Viv", "Rahul", "git");
         demo(1,2,3,4,5,6);
         demo("Viv", "vi", "v");
         fun(10,20,30);
@@ -21,7 +21,7 @@ public class varargs {
     }
 
     static void multiple(int a, int b, String ...v) {
-        System.out.println(a + " " + b + " " + Arrays.toString(v));
+//        System.out.println(a + " " + b + " " + Arrays.toString(v));
     }
 
     static void fun(int ...v) {
