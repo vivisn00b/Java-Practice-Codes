@@ -20,7 +20,9 @@ class ALfunctions {
         for(int e : al) {
             System.out.println(e); //will print more than 2 outputs if inputs are more
         }
-        
+        System.out.println(al.get(2)); //returns element at index 2
+        System.out.println(al.indexOf(100)); //retuens index of specified element
+
         ArrayList<String> l1 = new ArrayList<>();
         l1.add("Java");
         l1.add("C++");
@@ -32,5 +34,25 @@ class ALfunctions {
         l3.add("JavaScript");
         l1.addAll(0, l3); //add at specific index
         System.out.println("" + l1);
+        l1.remove("C"); //remove a specified element
+        System.out.println(l1);
+
+        //clearing all elements from arraylist
+        l1.clear();
+        System.out.println("List after clearing:" + l1);
+
+        ArrayList<String> n = new ArrayList<>(4);
+        n.add("Ram");
+        n.add("Shyam");
+        n.add("Hari");
+        n.add("Viv");
+        n.add("John");
+        String r = n.set(2, "Harry"); //replacing at index 2
+        System.out.println("Replaced element:" + r + "\n" + "New list:" + n);
+        System.out.println("Size before trim: " + n.size());
+        n.trimToSize();
+        //Printing the size after trimming
+        System.out.println("Size after trim: " + n.size());
+        System.out.println(n);
     }
 }
