@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Arrays;
 
 class ALfunctions {
     public static void main(String[] args) {
@@ -39,6 +41,7 @@ class ALfunctions {
 
         //clearing all elements from arraylist
         l1.clear();
+        //l1.removeAll(l1); //removes all element
         System.out.println("List after clearing:" + l1);
 
         ArrayList<String> n = new ArrayList<>(4);
@@ -54,5 +57,17 @@ class ALfunctions {
         //Printing the size after trimming
         System.out.println("Size after trim: " + n.size());
         System.out.println(n);
+
+        //proper example of removeAll()
+        ArrayList<String> result = new ArrayList<>();
+        result.add("1");
+        result.add("2");
+        result.add("3");
+        result.add("4");
+        Collection<String> toRemove = Arrays.asList("1", "4"); //passing the collection as parameter
+        boolean output = result.removeAll(toRemove);
+        System.out.println("Collection:" + toRemove);
+        System.out.println("List after removeAll: " + result);
+        System.out.println("Are the elements removed?" + output);
     }
 }
