@@ -1,33 +1,30 @@
 package BinarySearch;
-import java.util.Arrays;
 
-public class BSrecursive {
-    int binarySearch(int a[], int l, int r, int x)
-    {
-        if (r >= l) {
-            int m = l + (r - l) / 2;
-            if (a[m] == x)
-                return m;
-            if (a[m] > x)
-                return binarySearch(a, l, m - 1, x);
-            return binarySearch(a, m + 1, r, x);
-        }
-        return -1;
+public class BSexample {
+    public static void main(String args[]) {
+        BSexample obj = new BSexample();
+        int arr[] ={10,20,40,50,60,99};
+        int l = arr.length;
+        int search = 50;
+        int res = obj.binarysearch(arr, l, search);
+        if (res == -1)
+            System.out.println("Element not present");
+        else
+            System.out.println("Element found at index: " + res);
     }
 
-    public static void main(String args[])
-    {
-        BSrecursive ob = new BSrecursive();
-        int a[] = { 2, 3, 4, 10, 40 };
-        int n = a.length;
-        int x = 10;
-
-        int res = ob.binarySearch(a, 0, n - 1, x);
-
-        if (res == -1)
-            System.out.println(
-                    "Element is not present in array");
-        else
-            System.out.println("Element is present at index " + res);
+    public int binarysearch(int a[], int len, int x) {
+        int start = 0;
+        int end = len-1;
+        while (start <= end) {
+            int mid = (start + end)/2;
+            if (x < a[mid])
+                end = mid-1;
+            else if (x > a[mid])
+                end = mid+1;
+            else
+                return mid;
+        }
+        return -1;
     }
 }
