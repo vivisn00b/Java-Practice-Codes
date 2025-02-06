@@ -21,7 +21,7 @@ public class BSexample {
             if (x < a[mid])
                 end = mid-1;
             else if (x > a[mid])
-                end = mid+1;
+                start = mid+1;
             else
                 return mid;
         }
