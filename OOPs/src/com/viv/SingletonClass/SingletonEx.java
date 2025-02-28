@@ -6,7 +6,7 @@ package OOPs.src.com.viv.SingletonClass;
 import java.lang.*;
 
 public class SingletonEx {
-    private static SingletonEx single_instance = null;
+    private static SingletonEx single_instance = null; // Static member to hold the single instance
 
     public String s;
     public int count=0;
@@ -18,7 +18,7 @@ public class SingletonEx {
     }
 
     // Creating a static function that returns the singleton class’s object (using lazy initialization).
-    public static SingletonEx SingletonEx()
+    public static SingletonEx SingletonEx() // Static factory method for global access
     {
         if (single_instance == null) {
             single_instance = new SingletonEx();
