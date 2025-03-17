@@ -1,3 +1,5 @@
+// The super keyword is a reference variable that is used to refer to parent class when we’re working with objects.
+//
 // It is majorly used in the following contexts:
 //
 // 1. Use of super with Variables
