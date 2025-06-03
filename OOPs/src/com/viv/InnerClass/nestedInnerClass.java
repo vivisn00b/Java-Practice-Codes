@@ -4,7 +4,7 @@ class OuterClass {
     private String outerField = "I’m an outer class field!";
 
     // Inner class
-    public class InnerClass {
+    class InnerClass {
         private String innerField = "I'm a inner class field!";
         // Nested inner class inside inner class
         class NestedInner {
@@ -18,7 +18,7 @@ class OuterClass {
 
 }
 
-public class NestedInnerClass {
+class NestedInnerClass {
     public static void main(String[] args) {
         // Create an instance of the outer class
         //OuterClass outer = new OuterClass();
