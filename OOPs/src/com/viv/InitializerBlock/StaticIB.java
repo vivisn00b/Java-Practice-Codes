@@ -10,7 +10,7 @@ class Database {
     }
 }
 
-public class Main {
+public class StaticIB {
     public static void main(String[] args) {
         Database.connect();
         Database.connect();  // Static block doesn't run again

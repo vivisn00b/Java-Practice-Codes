@@ -1,4 +1,4 @@
-class Animal {
+class Animals {
     // final method cannot be overridden
     public final void eat() {
         System.out.println("Animal is eating.");
@@ -9,7 +9,7 @@ class Animal {
     }
 }
 
-class Dog extends Animal {
+class Doggy extends Animals {
     // This would cause a compilation error:
     /*
     @Override
@@ -27,7 +27,7 @@ class Dog extends Animal {
 
 public class FinalMethod {
     public static void main(String[] args) {
-        Dog d = new Dog();
+        Doggy d = new Doggy();
         d.eat();   // Output: Animal is eating.
         d.sleep(); // Output: Dog is sleeping.
     }

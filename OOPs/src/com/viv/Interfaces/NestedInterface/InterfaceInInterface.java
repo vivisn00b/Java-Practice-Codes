@@ -1,3 +1,5 @@
+package OOPs.src.com.viv.Interfaces.NestedInterface;
+
 interface Outer {
     void display();
 
