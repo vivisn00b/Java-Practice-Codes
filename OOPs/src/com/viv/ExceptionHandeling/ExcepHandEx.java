@@ -19,7 +19,7 @@ public class ExcepHandEx {
         } catch (Exception e) { // Cannot use this block at first as ArithmeticException is a subclass of Exception, and catch blocks work from top to bottom.
             System.out.println(" Error: Invalid input.");
             System.out.println(e);
-        } finally {
+        } finally { // Runs no matter what — even if an exception is thrown or a return is called.
             System.out.println("✅ Program ended. Closing resources...");
             sc.close();  // Clean up
         }
