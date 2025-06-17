@@ -1,0 +1,32 @@
+// Indexes of Subarray Sum
+// https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1?page=1&category=Arrays,Strings&sortBy=submissions
+
+class Solution {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        // code here
+        int len = arr.length;
+        int f = 0;
+        ArrayList<Integer> res=new ArrayList<>();
+        for(int i=0; i<len; i++){
+            int sum=0;
+            for(int j=i; j<len; j++){
+                sum+=arr[j];
+                if(sum==target){
+                    f++;
+                    res.add(i+1);
+                    res.add(j+1);
+                    break;
+                }
+            }
+            if(f==1)
+                break;
+        }
+        if(f==1){
+            return res;
+        }
+        else {
+            res.add(-1);
+            return res;
+        }
+    }
+}

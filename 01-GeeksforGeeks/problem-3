@@ -1,0 +1,18 @@
+// Second Largest
+// https://www.geeksforgeeks.org/problems/second-largest3735/1?page=1&category=Arrays,Strings&sortBy=submissions
+
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        int largest=Integer.MIN_VALUE;
+        int larger=-1;
+        for(int num : arr) {
+            if(num>largest){
+                larger=largest;
+                largest=num;
+            } else if(num>larger && num<largest)
+                larger=num;
+        }
+        return larger==Integer.MIN_VALUE?-1:larger;
+    }
+}
