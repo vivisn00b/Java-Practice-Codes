@@ -1,5 +1,7 @@
 // Jagged array is an array that holds other arrays
 // The inner array can be of different lengths
+package Arrays;
+
 import java.util.Scanner;
 
 public class JaggedArray {
