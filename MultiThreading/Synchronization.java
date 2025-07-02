@@ -7,15 +7,21 @@ class Counter {
         count++;   // Only one thread modifies count at a time.
     }
 
+//    public void increment() {
+//        synchronized (this){
+//            count++;
+//        }
+//    }
+
     public int getCount() {
         return count;
     }
 }
 
-class Synchronization extends Thread{
+class Sync extends Thread{
     private Counter counter;
 
-    public Synchronization(Counter counter) {
+    public Sync(Counter counter) {
         this.counter = counter;
     }
 
@@ -28,12 +34,12 @@ class Synchronization extends Thread{
 
     public static void main(String[] args) {
         Counter counter = new Counter();
-        Synchronization sync = new Synchronization(counter);
-        Synchronization sync2 = new Synchronization(counter);
-        sync.start();
+        Sync sync1 = new Sync(counter);
+        Sync sync2 = new Sync(counter);
+        sync1.start();
         sync2.start();
         try {
-            sync.join();
+            sync1.join();
             sync2.join();
         } catch (Exception e) {
             System.out.println();
