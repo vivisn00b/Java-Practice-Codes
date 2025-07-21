@@ -46,10 +46,10 @@ class ATMlock {
             } else
                 System.out.println(user + " couldn't acquire lock using tryLock(). Skipping...");
         } catch (Exception e) {
-            Thread.currentThread().interrupt();;
+            Thread.currentThread().interrupt();
         }
         if(Thread.currentThread().isInterrupted())
-            System.out.println("Do something if thread is interrupted");
+            System.out.println("Thread with TryLock interrupted...");
     }
 
     public void WithdrawInterruptibly(String user, int amount) {
@@ -82,11 +82,19 @@ class LockExample {
         ATMlock atm = new ATMlock();
 
         Thread t1 = new Thread(() -> atm.withdraw("Amit", 400));
-        Thread t2 = new Thread(() -> atm.WithdrawInterruptibly("VIPuser", 100));
-        Thread t3 = new Thread(() -> atm.withdrawTryLock("Vivy", 500));
+        Thread t2 = new Thread(() -> atm.withdrawTryLock("Vivy", 500));
+        Thread t3 = new Thread(() -> atm.WithdrawInterruptibly("Rita", 100));
         t1.start();
         t2.start();
         t3.start();
+
+        //Interrupt t3 after 1 second to test lockInterruptibly
+        try {
+            Thread.sleep(1000);
+            t3.interrupt(); // This will interrupt t3 if it is waiting
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 
