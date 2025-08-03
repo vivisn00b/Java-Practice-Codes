@@ -60,7 +60,6 @@ class Thread1 extends Thread {
     public void run() {
         //synchronized (ticketCounter) {
             ticketCounter.bookTicket();
-            ticketCounter.makePayment();
         //}
     }
 }
@@ -76,7 +75,6 @@ class Thread2 extends Thread {
     public void run() {
         //synchronized (ticketCounter) {
             ticketCounter.makePayment();
-            ticketCounter.bookTicket();
         //}
     }
 }
