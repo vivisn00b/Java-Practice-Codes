@@ -7,9 +7,9 @@ public class CDLexample {
         int n = 3;
         ExecutorService exec = Executors.newFixedThreadPool(n);
         CountDownLatch latch = new CountDownLatch(n);
-        exec.submit(new DependentService(latch));
-        exec.submit(new DependentService(latch));
-        exec.submit(new DependentService(latch));
+        exec.submit(new Service(latch));
+        exec.submit(new Service(latch));
+        exec.submit(new Service(latch));
         latch.await();  // blocks until the count reaches 0
         System.out.println("Main thread started after waiting for other threads to start...");
         exec.shutdown();
