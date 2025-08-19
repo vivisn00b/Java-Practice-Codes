@@ -1,3 +1,5 @@
+// CyclicBarrier -> reusable checkpoint, resets automatically.
+
 package MultiThreading.CyclicBarrier;
 
 import java.util.concurrent.*;
@@ -30,7 +32,7 @@ class SubSystem implements Callable<Integer> {
         System.out.println(Thread.currentThread().getName() + " service started");
         Thread.sleep(1500);
         System.out.println(Thread.currentThread().getName() + " is waiting...");
-        barrier.await();
+        barrier.await();  // CyclicBarrier never blocks the main thread
         return 0;
     }
 }
