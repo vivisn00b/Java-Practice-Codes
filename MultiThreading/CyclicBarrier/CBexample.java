@@ -1,5 +1,6 @@
 // CyclicBarrier -> reusable checkpoint, resets automatically.
-
+// Latch is good for “wait until N tasks finish.”
+// Barrier is good for “let’s all reach this point, then move together.”
 package MultiThreading.CyclicBarrier;
 
 import java.util.concurrent.*;
