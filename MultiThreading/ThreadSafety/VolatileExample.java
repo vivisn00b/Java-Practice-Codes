@@ -3,7 +3,7 @@ package MultiThreading.ThreadSafety;
 import java.util.concurrent.*;
 
 class SharedObj {
-    private volatile boolean flag = false;
+    private volatile boolean flag = false; // reads the value directly from the main memory
 
     public void setFlag() {
         System.out.println("Writer thread made the flag true...");
@@ -11,7 +11,7 @@ class SharedObj {
     }
 
     public void printIfTrue() {
-        while (!flag) {
+        while (!flag) {  // If the variable wasn't set to volatile, the cached value of flag would've been used, and the loop would've been infinite
             // do nothing
         }
         System.out.println("Flag is true!");
