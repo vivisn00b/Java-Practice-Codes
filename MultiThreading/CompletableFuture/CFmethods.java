@@ -62,10 +62,26 @@ public class CFmethods {
         });
         hazard.thenApply(n -> n*2)
                 .thenAccept(System.out::println); //these never run
-        hazard.exceptionally(ex -> {
+        hazard.exceptionally(ex -> {  // handle an exception and return fallback value
             System.out.println("Error: " + ex);
             return -1; // fallback value
         }).thenAccept(System.out::println);
+        // handle(fn) → handle both success and failure
+        hazard.handle((res, ex) -> {
+            if (ex != null) {
+                System.out.println("Error: " + ex);
+                return -1;
+            }
+            return res*2;
+        }).thenAccept(System.out::println);
+        // whenComplete(biConsumer) → peek at result/exception
+        hazard.whenComplete((res, ex) -> {
+                    if (ex != null)
+                        System.out.println("Error: " + ex);
+                    else
+                        System.out.println("Result: " + res);
+                }).exceptionally(ex -> -1) // still need recovery if you want
+                .thenAccept(System.out::println);
 
         // manual completion
         CompletableFuture<String> cf = new CompletableFuture<>();
