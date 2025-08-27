@@ -1,4 +1,4 @@
-package MultiThreading;
+package MultiThreading.ThreadSafety;
 
 class Counter {
     private int count = 0;
