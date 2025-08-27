@@ -2,6 +2,7 @@ package MultiThreading.ThreadSafety;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class AtomicClass {
     private AtomicInteger counter = new AtomicInteger(0);
@@ -21,6 +22,13 @@ public class AtomicClass {
     public int getCounter() throws InterruptedException {
         Thread.sleep(1500);
         return counter.get();
+    }
+
+    public void setReference() {
+        // atomic operation on an object reference.
+        AtomicReference<String> ref = new AtomicReference<>("Hi");
+        ref.compareAndSet("Hi", "World");
+        System.out.println(ref.get());
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -48,5 +56,17 @@ public class AtomicClass {
         t1.join();
         t2.join();
         System.out.println("Vlaue: " + atomic.getCounter());
+        atomic.setReference();
     }
 }
+
+// All atomics share a few key operations:
+//
+//get() → get value
+//set(value) → set new value
+//lazySet(value) → eventual write (no immediate flush, faster)
+//compareAndSet(expect, update) → CAS magic
+//getAndIncrement(), incrementAndGet() → atomic ++
+//getAndAdd(n), addAndGet(n) → atomic += n
+//getAndUpdate(fn), updateAndGet(fn) → apply lambda atomically
+//accumulateAndGet(x, fn) → combine with custom op
