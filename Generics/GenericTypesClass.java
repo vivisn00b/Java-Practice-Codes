@@ -53,7 +53,7 @@ class Account<K, V> {
     }
 }
 
-public class GenericTypes {
+public class GenericTypesClass {
     public static void main(String[] args) {
         Person<Integer> age = new Person<>();  //Box is now type safe
         age.setValue(21);
