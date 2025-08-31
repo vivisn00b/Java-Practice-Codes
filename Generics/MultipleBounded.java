@@ -100,8 +100,11 @@ class BoundedContainer<T extends Number & Printable> {
 
 public class MultipleBounded {
     public static void main(String[] args) {
-        MyNumber num = new MyNumber(50);
-        BoundedContainer<MyNumber> bContain = new BoundedContainer<>(num);
-        bContain.display();
+        MyNumber num1 = new MyNumber(50);
+        MyNumber num2 = new MyNumber(0.5);
+        BoundedContainer<MyNumber> bContain1 = new BoundedContainer<>(num1);
+        BoundedContainer<MyNumber> bContain2 = new BoundedContainer<>(num2);
+        bContain1.display();
+        bContain2.display();
     }
 }
