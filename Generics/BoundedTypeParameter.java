@@ -21,3 +21,29 @@ public class BoundedTypeParameter<T extends Number> {
         // will give error because it's bounded to only Number
     }
 }
+
+
+interface NumberContainer<T extends Number> {
+    void add(T item);
+    T get();
+}
+
+class IntegerContainer implements NumberContainer<Integer> {
+    private Integer item;
+
+    @Override
+    public void add(Integer item) {
+        this.item = item;
+    }
+
+    @Override
+    public Integer get() {
+        return item;
+    }
+
+    public static void main(String[] args) {
+        NumberContainer<Integer> box = new IntegerContainer();
+        box.add(20);
+        System.out.println(box.get());
+    }
+}
