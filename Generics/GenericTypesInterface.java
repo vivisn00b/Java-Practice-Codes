@@ -47,5 +47,9 @@ public class GenericTypesInterface {
         StringCointainer sc = new StringCointainer();
         sc.set("implemented with specific type");
         System.out.println(sc.get());
+
+        GenericContainer<String> gc = new GenericContainer<>();
+        gc.set("implemented with generics");
+        System.out.println(gc.get());
     }
 }
