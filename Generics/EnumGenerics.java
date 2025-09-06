@@ -1,14 +1,14 @@
 package Generics;
 
 enum Operation {
-    ADD, SUBSTRACT, MULTIPLY, DIVIDE;
+    ADD, SUBTRACT, MULTIPLY, DIVIDE;
 
     public <T extends Number> double apply(T a, T b) {
         switch (this) {
             case ADD -> {
                 return a.doubleValue() + b.doubleValue();
             }
-            case SUBSTRACT -> {
+            case SUBTRACT -> {
                 return a.doubleValue() - b.doubleValue();
             }
             case MULTIPLY -> {
