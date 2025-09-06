@@ -1,8 +1,7 @@
 // Upper-bounded wildcards are useful when you want to read data from a generic structure but you don’t need to modify it
 
-package Generics.Wildcards;
+package Generics.WildcardsInGenerics;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UpperBounded {

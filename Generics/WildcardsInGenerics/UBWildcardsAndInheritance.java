@@ -1,4 +1,4 @@
-package Generics.Wildcards;
+package Generics.WildcardsInGenerics;
 
 import java.util.List;
 
