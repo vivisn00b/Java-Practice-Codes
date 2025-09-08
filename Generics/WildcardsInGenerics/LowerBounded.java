@@ -21,6 +21,11 @@ public class LowerBounded {
         List<Number> numList = new ArrayList<>();
         List<Object> objList = new ArrayList<>();
 
+        List<? super Integer> list = new ArrayList<Number>();
+        list.add(123);
+        // Contravariant generics allow you to assign a collection of objects of a more specific type to a reference that expects a more general type.
+        list.add(12345);
+
         // Works with an Integer list
         addObject(intList);
         System.out.println("intList: " + intList);
