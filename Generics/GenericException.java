@@ -4,6 +4,15 @@
 
 package Generics;
 
+class MyException extends Exception {
+    public <T> MyException(T value) {
+        super("Exception related to value: "
+                + value.toString()
+                + " of type: "
+                + value.getClass().getName());
+    }
+}
+
 public class GenericException {
     // Generic Methods with Exceptions
     public static <T extends Exception> void throwGenericException(Class<T> exceptionClass) throws T {
@@ -21,6 +30,12 @@ public class GenericException {
             System.out.println(e.getMessage());  // Output: Generic Exception
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        try {
+            throw new MyException(123);
+        } catch (MyException e) {
+            System.out.println("Exception caught: " + e.getMessage());
         }
     }
 }
