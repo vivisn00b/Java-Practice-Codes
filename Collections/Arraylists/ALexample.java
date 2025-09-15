@@ -1,6 +1,8 @@
 package Collections.Arraylists;
 
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ALexample {
@@ -26,15 +28,32 @@ public class ALexample {
 
         // input
         for (int i = 0; i < 5; i++) {
+            System.out.println("Enter element " + i + ": ");
             list.add(in.nextInt());
         }
 
+        boolean hasNum = list.contains(2);
+        System.out.println(hasNum);
+
         // get item at any index
         for (int i = 0; i < 5; i++) {
-            System.out.println(list.get(i)); // pass index here, list[index] syntax will not work here
+            System.out.print(list.get(i) + "\t"); // pass index here, list[index] syntax will not work here
         }
+        System.out.println();
 
         System.out.println(list);
 
+        Object[] arr = list.toArray();
+        System.out.println(arr.getClass() + Arrays.toString(arr));
+        //Integer[] array = list.toArray(new Integer[0]);  // the toArray() method will internally allocate a new array of the correct size
+        Integer[] array = list.toArray(new Integer[list.size()]);  // preallocate an array size, if the array is large enough, toArray() will reuse your array instead of creating a new one.
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Element " + i + ": " + array[i]);
+        }
+
+        list.sort(Comparator.naturalOrder());  // ascending order
+        list.sort(Comparator.reverseOrder());  // descending order
+        list.sort(null);  // If you pass null, Java treats it as "use the natural ordering of elements"
+        System.out.println("Sorted list:" + list);
     }
 }
