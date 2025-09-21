@@ -7,10 +7,10 @@ public class LinkedListFunctions {
         LinkedList<String> list = new LinkedList<>();
 
         System.out.println("=== Adding Elements ===");
-        list.add("Apple");                 // add at end
+        list.add("Apple");                    // add at end
         list.addFirst("Mango");            // add at beginning
         list.addLast("Banana");            // add at end
-        list.add(1, "Grapes");             // add at index
+        list.add(1, "Grapes");  // add at index
         list.offer("Orange");              // add at end (queue-style)
         list.offerFirst("Pineapple");      // add at beginning
         list.offerLast("Strawberry");      // add at end
@@ -32,6 +32,14 @@ public class LinkedListFunctions {
         System.out.println("Poll First: " + list.pollFirst());
         System.out.println("Poll Last: " + list.pollLast());
         System.out.println("List after removals: " + list);
+        System.out.println("Popped element: " + list.pop());
+        LinkedList<String> animals = new LinkedList<>(Arrays.asList("Cat", "Dog", "Cow"));
+        // Remove all elements present in 'animalsToRemove' from 'animals'
+        LinkedList<String> animalsToRemove = new LinkedList<>(Arrays.asList("Dog", "Lion"));
+        animals.removeAll(animalsToRemove);
+        System.out.println("Animals after using removeAll: " + animals);
+//        list.removeFirstOccurrence("Orange");
+//        list.removeLastOccurrence("Apple");
 
         System.out.println("\n=== Searching & Modifying ===");
         list.add("Mango");
