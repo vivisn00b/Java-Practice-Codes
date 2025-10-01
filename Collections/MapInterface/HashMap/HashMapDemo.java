@@ -33,13 +33,19 @@ public class HashMapDemo {
         for (Integer val : hashMap.values()) {
             System.out.println("Values: " + val);
         }
-        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-            System.out.println(entry);
+        Set<Map.Entry<String, Integer>> entries = hashMap.entrySet();
+        for (Map.Entry<String, Integer> entry : entries){
+            System.out.println(entry.getKey() + " : " + entry.getValue());
         }
+//        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+//            System.out.println(entry);
+//        }
 
-        HashMap<String, String> map = new HashMap<>(10, 0.75f);  // Automatically resizes bucket array if the count exceeds loadFactor × capacity. Default load factor is 0.75
+        HashMap<String, String> map = new HashMap<>(10, 0.5f);  // Automatically resizes bucket array if the count exceeds loadFactor × capacity. Default load factor is 0.75
+        System.out.println("Map size before: " + map.size());
         map.put(null, "NullKeyValue"); // one null key allowed
         map.put("A", null); // multiple null values possible
         System.out.println(map);
+        System.out.println("Map size after: " + map.size());
     }
 }
