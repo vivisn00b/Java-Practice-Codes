@@ -10,6 +10,7 @@ public class HashCodeAndEqualsMethod {
         Person p1 = new Person("Viv", 1);
         Person p2 = new Person("Alice", 2);
         Person p3 = new Person("Viv", 1);
+        //System.out.println("p1 hashcode: " + p1.hashCode() + ", " + "p3 hashcode: " + p3.hashCode());
         //System.out.println("Same type? " + (p1.getClass() == p3.getClass()));  //true
         //System.out.println("Same memory address? " + (p1 == p3));  //false
         //System.out.println("p1 == p3? " + p1.equals(p3)); //true
