@@ -3,6 +3,7 @@
 // The implementation of the LinkedHashMap is very similar to a doubly linked list.
 // It maintains the order in which elements are added.
 // Allows one null key and multiple null values.
+// It is not synchronized by default.
 
 package Collections.MapInterface.LinkedHashMap;
 
@@ -33,7 +34,24 @@ public class LinkedHashMapDemo {
         hashMap.put("Shubham", 91);
         hashMap.put("Bob", 80);
         hashMap.put("Akshit", 78);
-        LinkedHashMap linkedHashMap1 = new LinkedHashMap(hashMap);
+        LinkedHashMap linkedHashMap1 = new LinkedHashMap(hashMap);  // LinkedHashMap from a HashMap
         System.out.println(linkedHashMap1);
+
+        LinkedHashMap<String, String> capitalCities = new LinkedHashMap<>();
+        capitalCities.put("England", "London");
+        capitalCities.put("India", "New Delhi");
+        capitalCities.put("Austria", "Vienna");
+        capitalCities.put("Norway", "Oslo");
+        capitalCities.put("USA", "Washington DC");
+
+        System.out.println("Country - Capital:");
+        for(Map.Entry<String, String> entry : capitalCities.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+
+        System.out.println("\nCapital of India: " + capitalCities.get("India"));
+        capitalCities.remove("Austria");
+        System.out.println("After removal, map: " + capitalCities);
+        System.out.println("Size of map: " + capitalCities.size());
     }
 }
