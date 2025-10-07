@@ -98,7 +98,7 @@ public class SortedMapDemo {
 //            }
 //        };
 
-        // Its implementation is TreeMap
+        // Its implementation is TreeMap (TreeMap implements NavigableMap which extends SortedMap)
         // Internal implementation of TreeMap is Red Black tree (self-balancing binary search tree)
         SortedMap<String, Integer> map = new TreeMap<>(); // Natural ordering
         //Map<String, Integer> map = new TreeMap<>(); // Even without SortedMap it sorts the keys but SortedMap interface has some useful functions
@@ -120,13 +120,15 @@ public class SortedMapDemo {
 
         SortedMap<Integer, String> descMap = new TreeMap<>((a, b) -> b - a); // descending order
         descMap.put(91, "Vivek");
-        descMap.put(99, "Shubham");
+        descMap.put(79, "Shubham");
+        descMap.put(89, "Dilan");
+        descMap.put(99, "Pine");
         descMap.put(78, "Monit");
         descMap.put(77, "Vipul");
         //descMap.put(null, "Anything");  // will give .NullPointerException
-        descMap.get(77);
-        descMap.containsKey(78);
-        descMap.containsValue(77);
-        System.out.println(descMap.subMap(78, 91));
+        System.out.println(descMap.get(77));
+        System.out.println(descMap.containsKey(78));
+        System.out.println(descMap.containsValue(77));
+        SortedMap<Integer, String> sMap = descMap.subMap(99, 78);
     }
 }
