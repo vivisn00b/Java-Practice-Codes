@@ -1,5 +1,5 @@
 // SortedMap is an interface that extends Map and guarantees that the entries are sorted based on the keys, either in their natural ordering or by a specified Comparator.
-
+// SortedMap does not allow null keys or null values. If we insert a null key or value it will throw an error.
 package Collections.MapInterface.SortedMap;
 
 import java.util.*;
@@ -125,7 +125,7 @@ public class SortedMapDemo {
         descMap.put(99, "Pine");
         descMap.put(78, "Monit");
         descMap.put(77, "Vipul");
-        //descMap.put(null, "Anything");  // will give .NullPointerException
+        //descMap.put(null, "Anything");  // will give NullPointerException
         System.out.println(descMap.get(77));
         System.out.println(descMap.containsKey(78));
         System.out.println(descMap.containsValue(77));
