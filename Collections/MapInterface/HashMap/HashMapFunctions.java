@@ -1,6 +1,9 @@
 package Collections.MapInterface.HashMap;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class HashMapFunctions {
     public static void main(String[] args) {
@@ -43,5 +46,27 @@ public class HashMapFunctions {
         System.out.println("Is Vivek present? " + res);  // 0
         hashMap.put("Shubham", 92);
         System.out.println(hashMap);
+
+        Map<Integer, String> sourceMap = new HashMap<>();
+        sourceMap.put(1, "Apple");
+        sourceMap.put(2, "Banana");
+        sourceMap.put(3, "Cherry");
+        Collection<String> values = sourceMap.values(); // Get a Collection of values
+        String[] valueArray = values.toArray(new String[0]); // Convert to array
+        for (String value : valueArray) {
+            System.out.println("Value: " + value);
+        }
+
+        Set<Integer> keys = sourceMap.keySet(); // Get a Set of keys
+        Integer[] keyArray = keys.toArray(new Integer[0]); // Convert to array
+        for (Integer key : keyArray)
+            System.out.println("Key: " + key);
+
+        // For key-value pair
+        Set<Map.Entry<Integer, String>> entrySet = sourceMap.entrySet(); // Get a Set of entries
+        Map.Entry<Integer, String>[] entryArray = entrySet.toArray(new Map.Entry[0]); // Convert to array
+        for (Map.Entry<Integer, String> entry : entryArray) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
     }
 }
