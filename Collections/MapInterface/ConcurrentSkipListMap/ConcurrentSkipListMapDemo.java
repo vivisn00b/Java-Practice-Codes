@@ -1,14 +1,15 @@
+// A ConcurrentSkipList is based on a skip list, which is a probabilistic data structure that uses multiple layers of linked lists to allow for efficient search, insertion, and deletion operations.
 // Implementation of ConcurrentNavigableMap. ConcurrentMap, SortedMap
 // Based on skip list data structure
 // Maintains keys in ordered fashion
 
-package Collections.MapInterface.ConcurrentSkipList;
+package Collections.MapInterface.ConcurrentSkipListMap;
 
 import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.concurrent.ConcurrentSkipListMap;
 
-public class ConcurrentSkipListDemo {
+public class ConcurrentSkipListMapDemo {
     public static void main(String[] args) {
         ConcurrentSkipListMap<Integer, String> map = new ConcurrentSkipListMap<>();
         map.put(1, "One");
