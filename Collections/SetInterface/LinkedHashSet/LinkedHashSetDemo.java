@@ -6,17 +6,11 @@
 
 package Collections.SetInterface.LinkedHashSet;
 
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 public class LinkedHashSetDemo {
     public static void main(String[] args) {
-        // Create a LinkedHashSet
         LinkedHashSet<String> set = new LinkedHashSet<>();
-
-        // add()
         set.add("Banana");
         set.add("Apple");
         set.add("Mango");
@@ -80,5 +74,38 @@ public class LinkedHashSetDemo {
         // clear(), isEmpty()
         set.clear();
         System.out.println("After clear: " + set + " | Is empty? " + set.isEmpty());
+    }
+}
+
+// In Java 21+, LinkedHashSet implements the new SequencedSet interface, adding powerful methods for double-ended operations and reverse views.
+class LinkedHashSetSequencedDemo {
+    public static void main(String[] args) {
+        SequencedSet<String> set = new LinkedHashSet<>();
+        set.add("B");
+        set.add("C");
+
+        // Add as first and last entry
+        set.addFirst("A");
+        set.addLast("D");
+        System.out.println("After addFirst/addLast: " + set); // [A, B, C, D]
+
+        // Get first and last element
+        System.out.println("getFirst(): " + set.getFirst()); // A
+        System.out.println("getLast(): " + set.getLast());   // D
+
+        // Remove first and last element
+        String first = set.removeFirst();
+        String last = set.removeLast();
+        System.out.println("Removed first: " + first + ", last: " + last);
+        System.out.println("After removeFirst/removeLast: " + set); // [B, C]
+
+        // Reversed view (live)
+        SequencedSet<String> rev = set.reversed();
+        System.out.println("Reversed view: " + rev); // [C, B]
+
+        // Changing reversed view changes the original set
+        rev.addFirst("Z");
+        System.out.println("After rev.addFirst(\"Z\"): " + set); // [B, C, Z]
+        System.out.println("Reversed view (updated): " + rev);   // [Z, C, B]
     }
 }
