@@ -24,17 +24,25 @@ public class ConcurrentSkipListDemo {
         System.out.println("Initial map: " + map);
         // print key-value pair whose key is greater than 2
         System.out.println("ceilingEntry-2: " + map.ceilingEntry(2));
-        // get the descending key set
-        NavigableSet navigableSet = map.descendingKeySet();
-
+        // NavigableKeySet and descendingKeySet
+        NavigableSet<Integer> navigableSet1 = map.navigableKeySet();
+        System.out.println("NavigableKeySet: " + navigableSet1);
+        NavigableSet navigableSet2 = map.descendingKeySet();
         System.out.println("descendingKeySet: ");
-
         // Iterate through the keySet
-        Iterator itr = navigableSet.iterator();
+        Iterator itr = navigableSet2.iterator();
         while (itr.hasNext()) {
             String s = (String)itr.next();
             System.out.println(s);
         }
+        // ceilingEntry - least entry >= key
+        System.out.println("ceilingEntry(2): " + map.ceilingEntry(2));
+        // floorEntry - greatest entry <= key
+        System.out.println("floorEntry(2): " + map.floorEntry(2));
+        // higherEntry - least entry > key
+        System.out.println("higherEntry(5): " + map.higherEntry(5));
+        // lowerEntry - greatest entry < key
+        System.out.println("lowerEntry(5): " + map.lowerEntry(5));
         // print the first mapping
         System.out.println("firstEntry: " + map.firstEntry());
         // print the last mapping
@@ -47,6 +55,12 @@ public class ConcurrentSkipListDemo {
         System.out.println("pollLastEntry: " + map.pollLastEntry());
         // print the last mapping
         System.out.println("now lastEntry: " + map.lastEntry());
+        // SubMap - view between keys (inclusive, exclusive variants)
+        System.out.println("subMap(3, false, 7, true): " + map.subMap(3, false, 7, true));
+        // HeadMap - keys less than 6 (exclusive)
+        System.out.println("headMap(6): " + map.headMap(6));
+        // TailMap - keys greater or equal to 6
+        System.out.println("tailMap(6): " + map.tailMap(6));
     }
 }
 
