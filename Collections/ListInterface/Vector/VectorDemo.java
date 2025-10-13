@@ -2,7 +2,7 @@
 // It is slower compared to ArrayList
 // It is a legacy class
 
-package Collections.Vector;
+package Collections.ListInterface.Vector;
 
 import java.util.Vector;
 
