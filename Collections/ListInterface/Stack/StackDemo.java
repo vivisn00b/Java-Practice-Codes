@@ -1,7 +1,7 @@
 // Stack is a linear data structure that follows the Last In First Out (LIFO) principle.
 // Internally, it extends the Vector class.
 
-package Collections.Stack;
+package Collections.ListInterface.Stack;
 
 import java.util.Stack;
 
