@@ -1,6 +1,5 @@
-package Collections.Vector;
+package Collections.ListInterface.Vector;
 
-import java.util.ArrayList;
 import java.util.Vector;
 
 public class ThreadSafetyInVector {
