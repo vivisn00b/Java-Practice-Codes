@@ -1,7 +1,7 @@
 // It represents the instances of functional interfaces (interfaces with a single abstract method).
 // https://devcookies.medium.com/a-complete-guide-to-lambda-expressions-in-java-0aea2e1cea42
 
-package LambdaExpressions;
+package FunctionalProgramming.LambdaExpressions;
 
 interface FunInterface {
     //void abstractFun(int x);
